@@ -1,5 +1,7 @@
 # Streamlit App — Team3 Collaborative Guide
 
+**Live App:** [https://sgjobdata-visualization-assignment-6jszt2bzmkxfmz2knopqem.streamlit.app](https://sgjobdata-visualization-assignment-6jszt2bzmkxfmz2knopqem.streamlit.app)
+
 ## Overview
 
 Each team member builds their own dashboard as a **separate page** in a multi-page Streamlit app. The `main.py` serves as a landing page with an overview and links to each member's dashboard. Each dashboard appears in the sidebar for easy navigation.

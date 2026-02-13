@@ -1,6 +1,12 @@
 # 6m-data-coaching-assignment-project
 Project assignment requirement
 
+## Live App
+
+**[SG Job Market Explorer — Team 3 Dashboard](https://sgjobdata-visualization-assignment-6jszt2bzmkxfmz2knopqem.streamlit.app)**
+
+---
+
 # Module 1 Assignment Project – Singapore Jobs Analytics
 
 Design a simple data product (dashboard or web app) using a real-world CSV of Singapore job postings (~1M+ rows). Your goal is to solve a clear business problem for a specific user group using insights from the data.
