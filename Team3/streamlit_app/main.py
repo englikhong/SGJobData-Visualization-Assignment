@@ -37,8 +37,9 @@ def _load_db_stats():
     row = con.execute(
         "SELECT MIN(posting_date), MAX(posting_date) FROM jobs_enriched WHERE posting_date IS NOT NULL"
     ).fetchone()
-    stats["date_min"] = str(row[0])[:10] if row[0] else "N/A"
-    stats["date_max"] = str(row[1])[:10] if row[1] else "N/A"
+    from datetime import date
+    stats["date_min"] = row[0].strftime("%b %Y") if isinstance(row[0], date) else str(row[0])[:7] if row[0] else "N/A"
+    stats["date_max"] = row[1].strftime("%b %Y") if isinstance(row[1], date) else str(row[1])[:7] if row[1] else "N/A"
     con.close()
     return stats
 
@@ -119,11 +120,12 @@ st.markdown(
 # ── Database Stats ───────────────────────────────────────────────────────────
 stats = _load_db_stats()
 if stats:
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2, c3, c4, c5 = st.columns(5)
     c1.metric("Total Job Postings", f"{stats['total_jobs']:,}")
     c2.metric("Companies", f"{stats['total_companies']:,}")
     c3.metric("Job Categories", f"{stats['total_categories']}")
-    c4.metric("Date Range", f"{stats['date_min']}  to  {stats['date_max']}")
+    c4.metric("Date From", stats['date_min'])
+    c5.metric("Date To", stats['date_max'])
 
 st.divider()
 
