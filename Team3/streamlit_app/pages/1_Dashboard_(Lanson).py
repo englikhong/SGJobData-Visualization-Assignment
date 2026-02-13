@@ -5,7 +5,7 @@ import plotly.express as px
 import numpy as np
 from pathlib import Path
 
-# --- 1. CONFIGURATION & CONNECTION ---
+# --- 1. CONFIGURATION & CONNECTION  ---
 # set_page_config MUST be the first Streamlit command
 st.set_page_config(page_title="SG Gems Explorer", layout="wide")
 
